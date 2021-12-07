@@ -1,8 +1,8 @@
 
 ````
-$ ./01.pl <example.txt
+$ ./part.pl <example.txt
 8
-./01.pl <input.txt
+$ ./part1.pl <input.txt
 1462
 $
 ````
