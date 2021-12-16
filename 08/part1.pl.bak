@@ -1,0 +1,51 @@
+#!/bin/perl
+# Digit Segments
+# 0     6
+# 1     2
+# 2     5
+# 3     5
+# 4     4
+# 5     5
+# 6     6
+# 7     3
+# 8     7
+# 9     6
+
+while(<>) {
+ #print "line=$_";
+ @a=split(/ /,$_);
+ chomp(@a);
+ #for $z ( 0 .. $#a) {
+ # print " ele $z = ",$a[$z],"\n";
+ #}
+
+ undef %found;
+ for $z ( 0 .. 9 ) {
+  $v=$a[$z];
+  if(length($v) == 2 || # 1
+     length($v) == 3 || # 7
+     length($v) == 4 || # 4
+     length($v) == 7) { # 8
+   $found{$v}='x';
+ #  print " -> found on left : $v\n";
+   $appear++;
+  }
+ }
+ #print "\n";
+
+ for $z ( 11 .. 14 ) {
+ # print " -> output digit ",$a[$z],"\n";
+  $v=$a[$z];
+  if(length($v) == 2 || # 1
+     length($v) == 3 || # 7
+     length($v) == 4 || # 4
+     length($v) == 7) { # 8
+ #  print " -> found\n";
+   $c++;
+  }
+
+ }
+
+# print "------\n";
+}
+die $c;
